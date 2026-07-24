@@ -1,0 +1,94 @@
+import java.util.*;
+class Node {
+    int data;
+    node next;
+    node(int d)
+    {
+        this.data = d;
+        this.next = null;
+    }
+}
+class Stack {
+   private Node top;
+   top = null;
+}
+voud push()
+{
+    Node n = new Node (d);
+    n.next = top;
+    top = n;
+    
+    if(top==null)
+    System.out.println("Stack is Empty");
+}
+void pop() {
+    if(top==null)
+    System.out.println("stack underflow");
+   return;
+    
+}
+void peek()
+{
+     if(top==null)
+    System.out.println("stack is Empty");
+   return;
+        
+    }
+}
+void display()
+{
+    if(top==null){
+        System.out.println("Stack is Empty");
+        return;
+    }
+    Node temp = top;
+    while(temp!=null){
+        System.out.print(temp.data+" ");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+
+        int n = obj.nextInt();
+        Queue q = new Queue(n);
+
+        while (true) {
+            System.out.println("\n1. Enqueue");
+            System.out.println("2. Dequeue");
+            System.out.println("3. Display");
+            System.out.println("4. Exit");
+            System.out.print("Enter choice: ");
+
+            int choice = obj.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter value to Enqueue: ");
+                    int val = obj.nextInt();
+                    q.enqueue(val);
+                    break;
+
+                case 2:
+                    q.dequeue();
+                    break;
+
+                case 3:
+                    q.display();
+                    break;
+
+                case 4:
+                    System.out.println("Exiting...");
+                    obj.close();
+                    return;
+
+                default:
+                    System.out.println("Invalid choice");
+            }
+        }
+    }
+}
+
+
+
+
